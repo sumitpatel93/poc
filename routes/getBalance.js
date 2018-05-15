@@ -11,8 +11,9 @@ router.get('/', (req, res, next) => {
     web3 = new Web3(web3.currentProvider);
 }
 else{
-web3 =  new Web3(new Web3.providers.HttpProvider("http://35.190.169.173:8545"));
-var bal = web3.eth.getBalance("0x3b48EB5904C89aA1B0aE3D2B435A75Fb4cEdb738");
+web3 =  new Web3(new Web3.providers.HttpProvider("https://rinkeby.infura.io/tPNyqnWI32IepQh2lrMf"));
+var bal = web3.eth.getBalance("0x2e8ce788fc2bc7885c1ccb3e79d49b907edf32a5");
+
 console.log(bal);
 }
 

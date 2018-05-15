@@ -10,6 +10,8 @@ var users = require('./routes/users');
 var orderbook = require('./routes/orderbook');
 var portfolio = require('./routes/portfolio');
 var getBalance = require('./routes/getBalance');
+var generateAddress = require('./routes/generateAddress');
+var blockInfo = require('./routes/blockInfo');
 
 var app = express();
 
@@ -30,6 +32,9 @@ app.use('/users', users);
 app.use('/orderbook',orderbook);
 app.use('/portfolio',portfolio);
 app.use('/getBalance', getBalance);
+app.use('/generateAddress', generateAddress);
+app.use('/blockInfo',blockInfo);
+
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
