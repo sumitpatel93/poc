@@ -12,6 +12,7 @@ var portfolio = require('./routes/portfolio');
 var getBalance = require('./routes/getBalance');
 var generateAddress = require('./routes/generateAddress');
 var blockInfo = require('./routes/blockInfo');
+var trxRcpt = require('./routes/trxRcpt');
 
 var app = express();
 
@@ -34,6 +35,7 @@ app.use('/portfolio',portfolio);
 app.use('/getBalance', getBalance);
 app.use('/generateAddress', generateAddress);
 app.use('/blockInfo',blockInfo);
+app.use('/trxRcpt',trxRcpt);
 
 
 /// catch 404 and forwarding to error handler

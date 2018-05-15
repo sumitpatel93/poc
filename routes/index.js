@@ -6,7 +6,7 @@ var router = express.Router();
 
 
 router.get('/', (req, res, next) => {
-res.send("hi")	
+res.send("hi this is index page for api testing of wallet")	
 });
 
 module.exports = router;

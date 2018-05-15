@@ -12,9 +12,9 @@ router.get('/', (req, res, next) => {
 }
 else{
 web3 =  new Web3(new Web3.providers.HttpProvider("https://rinkeby.infura.io/tPNyqnWI32IepQh2lrMf"));
-var bal = web3.eth.getBalance("0x2e8ce788fc2bc7885c1ccb3e79d49b907edf32a5");
+var bal = web3.eth.getBalance("0xc77004bB46AAB0Bb16ec7f54dE56bF20e6Ba1621")
+res.send(bal)
 
-console.log(bal);
 }
 
 	});	

@@ -12,7 +12,7 @@ router.get('/', (req, res, next) => {
 }
 else{
 web3 =  new Web3(new Web3.providers.HttpProvider("https://rinkeby.infura.io/tPNyqnWI32IepQh2lrMf"));
-var bal = web3.eth.personal.newAccount();
+var bal = web3.eth.getTransactionCount("0x11f4d0A3c12e86B4b5F39B213F7E19D048276DAe")
 console.log(bal);
 }
 
