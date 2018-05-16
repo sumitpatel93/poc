@@ -11,9 +11,9 @@ router.get('/', (req, res, next) => {
     web3 = new Web3(web3.currentProvider);
 }
 else{
-web3 =  new Web3(new Web3.providers.HttpProvider("https://rinkeby.infura.io/tPNyqnWI32IepQh2lrMf"));
+web3 =  new Web3(new Web3.providers.HttpProvider("http://35.190.169.173:8545"));
 var info = web3.eth.getBlock(3150);
-console.log(info);
+res.send(info);
 }
 
 	});	

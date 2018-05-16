@@ -13,6 +13,8 @@ var getBalance = require('./routes/getBalance');
 var generateAddress = require('./routes/generateAddress');
 var blockInfo = require('./routes/blockInfo');
 var trxRcpt = require('./routes/trxRcpt');
+var gasPrice = require('./routes/gasPrice');
+var getTransactionCount = require('./routes/getTransactionCount');
 
 var app = express();
 
@@ -36,6 +38,8 @@ app.use('/getBalance', getBalance);
 app.use('/generateAddress', generateAddress);
 app.use('/blockInfo',blockInfo);
 app.use('/trxRcpt',trxRcpt);
+app.use('/gasPrice',gasPrice);
+app.use('/getTransactionCount',getTransactionCount);
 
 
 /// catch 404 and forwarding to error handler

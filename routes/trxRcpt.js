@@ -6,14 +6,18 @@ var router = express.Router();
 
 
 router.get('/', (req, res, next) => {
-	request('', function (error, response, body) {		
+	request('', function (error, response, body) {
+   
 			if (typeof web3 !== 'undefined'){ 
+
+    		    
     web3 = new Web3(web3.currentProvider);
 }
 else{
-web3 =  new Web3(new Web3.providers.HttpProvider("https://rinkeby.infura.io/tPNyqnWI32IepQh2lrMf"));
-var rcpt = web3.eth.getTransactionReceipt('0xb5539fa1a151aaefee8ce1f5561fd4d906ddf5795a8ccef94217c71d57dde14e');
-console.log(rcpt);
+web3 =  new Web3(new Web3.providers.HttpProvider("http://35.190.169.173:8545"));
+//That the receipt is not available for pending transactions.
+var rcpt = web3.eth.getTransactionReceipt('0x42d45663cd3884580de0b80469dff8ca263ec15495e96b498f379f411acbb9ed');
+res.send(rcpt);
 
 }
 
