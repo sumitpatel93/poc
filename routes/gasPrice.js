@@ -13,7 +13,7 @@ router.get('/', (req, res, next) => {
 else{
 web3 =  new Web3(new Web3.providers.HttpProvider("http://35.190.169.173:8545"));
 var gasPrice =  web3.eth.gasPrice;
-console.log(gasPrice.toString(10));
+res.send(gasPrice.toString(10));
 
 }
 
