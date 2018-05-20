@@ -13,7 +13,7 @@ var keccak =  require("keccak");
 
 router.get('/', (req, res, next) => {
     
-if ( typeof web3 !== 'undefined' ) { 
+if ( typeof web3 !== 'undefined' && typeof web3 !== undefined) { 
     web3 = new Web3(web3.currentProvider);
 
    console.log('if');
@@ -39,7 +39,7 @@ var contract = web3.eth.contract(abiArray).at(contractAddress);
 
 var privKey = new Buffer('9e37167fd8b807a3805e41e34e07dd5472512ec568878c0a08c49cec0c5f9a4b', 'hex');
 console.log('else');
-var tx = new Tx(rawTransaction);
+var tx = new EthereumTx(rawTransaction);
 
 tx.sign(privKey);
 var serializedTx = tx.serialize();
