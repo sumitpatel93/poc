@@ -23,17 +23,17 @@ if ( typeof web3 !== 'undefined' && typeof web3 !== undefined) {
    web3 =  new Web3(new Web3.providers.HttpProvider("https://rinkeby.infura.io/tPNyqnWI32IepQh2lrMf"));
    var count = web3.eth.getTransactionCount("0xD8d9e3fE93315b8ce838E39c4696438A8d8E66F3");
 var abiArray = JSON.parse(fs.readFileSync('./public/mycoin.json', 'utf-8'));
-var contractAddress = "0x9A48831A220c793ed4CcF0dCbD5390fB56EF9B91";
+var contractAddress = "0xc4DF656aE645dBa57d5B6E63164026c2379A07Be";
 var contract = web3.eth.contract(abiArray).at(contractAddress);
    var number =  web3.eth.blockNumber;
    var rawTransaction = {
     "from": "0x95297713bdb43515420d9662a88516219085bb8a",
-    "nonce": web3.toHex(count),
-    "gasPrice": "0x04e3b29200",
+    "nonce": "0x001",
+    "gasPrice": "0x9184e72a000",
     "gasLimit": "0x7458",
     "to": "0xDED54CC5f578Aa39c1083dbe16D68a28C776cA02",
-    "value": "0x011",
-    //"data": contract.transfer.getData("0x9A48831A220c793ed4CcF0dCbD5390fB56EF9B91", 10, {from: "0xD8d9e3fE93315b8ce838E39c4696438A8d8E66F3"}),
+    "value": "0x012",
+    "data": contract.transfer.getData("0xDED54CC5f578Aa39c1083dbe16D68a28C776cA02", 100, {from: "0x95297713bdb43515420d9662a88516219085bb8a"}),
     "chainId": "0x04"
 };
 
