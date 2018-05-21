@@ -21,32 +21,33 @@ if ( typeof web3 !== 'undefined' && typeof web3 !== undefined) {
    else{
 
    web3 =  new Web3(new Web3.providers.HttpProvider("https://rinkeby.infura.io/tPNyqnWI32IepQh2lrMf"));
+ 
    var count = web3.eth.getTransactionCount("0xD8d9e3fE93315b8ce838E39c4696438A8d8E66F3");
 var abiArray = JSON.parse(fs.readFileSync('./public/mycoin.json', 'utf-8'));
-var contractAddress = "0xc4DF656aE645dBa57d5B6E63164026c2379A07Be";
+var contractAddress = "0x318a624cD1cc9B9830fE2B353816Fa2014f3D72d";
 var contract = web3.eth.contract(abiArray).at(contractAddress);
    var number =  web3.eth.blockNumber;
    var rawTransaction = {
-    "from": "0x95297713bdb43515420d9662a88516219085bb8a",
-    "nonce": "0x001",
-    "gasPrice": "0x9184e72a000",
-    "gasLimit": "0x7458",
-    "to": "0xDED54CC5f578Aa39c1083dbe16D68a28C776cA02",
+    "from": "0xbb7f52b085a2b4e567c0e12cc37d01572c5ff764",
+    "nonce":"0x002"  ,
+    "gasPrice": "0x9184e72a0",
+    "gasLimit": "0x7459",
+    "to": "0xd98077dAe57Fb61902AbA993ac32Cfb1213639B3",
     "value": "0x012",
-    "data": contract.transfer.getData("0xDED54CC5f578Aa39c1083dbe16D68a28C776cA02", 100, {from: "0x95297713bdb43515420d9662a88516219085bb8a"}),
+    "data": contract.transfer.getData("0xd98077dAe57Fb61902AbA993ac32Cfb1213639B3", 100, {from: "0xbb7f52b085a2b4e567c0e12cc37d01572c5ff764"}),
     "chainId": "0x04"
 };
 
-var privKey = new Buffer('9e37167fd8b807a3805e41e34e07dd5472512ec568878c0a08c49cec0c5f9a4b', 'hex');
+var privKey = new Buffer('ea54c4ee7d53f48d6e7120e07eb21d77d11383e2be4634b164537e9227ed71f1', 'hex');
 console.log('else');
 var tx = new EthereumTx(rawTransaction);
 
 tx.sign(privKey);
 var serializedTx = tx.serialize();
-;
+
 web3.eth.sendRawTransaction('0x' + serializedTx.toString('hex'), function(err, hash) {
      if (!err) { 
-        console.log(hash);
+        console.log("Your raw transaction hsh is:" ,hash);
      }
      else{
         console.log(err);
