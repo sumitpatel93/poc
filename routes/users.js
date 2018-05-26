@@ -47,10 +47,10 @@ var serializedTx = tx.serialize();
 
 web3.eth.sendRawTransaction('0x' + serializedTx.toString('hex'), function(err, hash) {
      if (!err) { 
-        console.log("Your raw transaction hsh is:" ,hash);
+        res.send("Your raw transaction hsh is:" ,hash);
      }
      else{
-        console.log(err);
+        res.send(err);
      }
 });
   
