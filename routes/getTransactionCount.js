@@ -16,7 +16,7 @@ router.get('/:address', (req, res, next) => {
            
 
     } else {
-        web3 = new Web3(new Web3.providers.HttpProvider("http://35.190.169.173:8545"));
+        web3 = new Web3(new Web3.providers.HttpProvider("https://rinkeby.infura.io/tPNyqnWI32IepQh2lrMf"));
         var count = web3.eth.getTransactionCount(address);
         res.send(count);
        

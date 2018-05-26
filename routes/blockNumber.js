@@ -14,7 +14,7 @@ if (typeof web3 !== undefined && typeof web3 !== 'undefined' ) {
    console.log('if');
 }
    else{
-   web3 =  new Web3(new Web3.providers.HttpProvider("http://35.190.169.173:8545"));
+   web3 =  new Web3(new Web3.providers.HttpProvider("https://rinkeby.infura.io/tPNyqnWI32IepQh2lrMf"));
    var number =  web3.eth.blockNumber;
    res.send(number);
    console.log('else');

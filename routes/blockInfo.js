@@ -13,7 +13,7 @@ router.get('/:blocknumber', (req, res, next) => {
     res.send(info);
 }
 else{
-    web3 =  new Web3(new Web3.providers.HttpProvider("http://35.190.169.173:8545"));
+    web3 =  new Web3(new Web3.providers.HttpProvider("https://rinkeby.infura.io/tPNyqnWI32IepQh2lrMf"));
     var info = web3.eth.getBlock(blocknumber);
     res.send(info);
 }

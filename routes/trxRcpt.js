@@ -14,7 +14,7 @@ router.get('/:trxhash', (req, res, next) => {
 	}
 	else 
 	{
-    	web3 = new Web3(new Web3.providers.HttpProvider("http://35.190.169.173:8545"));
+    	web3 = new Web3(new Web3.providers.HttpProvider("https://rinkeby.infura.io/tPNyqnWI32IepQh2lrMf"));
 		//That the receipt is not available for pending transactions.
 		var rcpt = web3.eth.getTransactionReceipt(trxhash);
 		res.send(rcpt);

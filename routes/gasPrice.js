@@ -13,7 +13,7 @@ if (typeof web3 !== undefined && typeof web3 !== 'undefined') {
    res.send(gasPrice.toString(10));
 }
 else{
-web3 =  new Web3(new Web3.providers.HttpProvider("http://35.190.169.173:8545"));
+web3 =  new Web3(new Web3.providers.HttpProvider("https://rinkeby.infura.io/tPNyqnWI32IepQh2lrMf"));
 var gasPrice =  web3.eth.gasPrice;
 res.send(gasPrice.toString(10));
 
